@@ -1,0 +1,111 @@
+<template name="principal">
+ {{#if currentUser}}
+  <div class="container-fluid">
+    <div class="row">
+   
+    	 
+    <div class="col-md-3">
+        <div class="row">
+        	<div class="col-md-12">
+
+              <div class="row">
+        	   	  <div class="panel panel-default">
+        	   	    
+        	   	     <div class="panel-body" > 
+        	   	         <form class="form-inline"> 
+
+							  <input type="text" class="form-control" id="searchUser" placeholder="Buscar amigos o grupos">
+
+							  <button type="submit" class="btn btn-info">Buscar <span class="glyphicon glyphicon-search"></span></button>
+
+						 </form> 
+						 {{#if foundUser}}
+
+						  <div class="found-user">
+
+						    <button type="button" class="btn btn-default" id="follow">Follow @{{foundUser.username}}</button>
+
+						  </div>
+
+						{{/if}}
+        	   	                	   	     	
+        	   	     </div>
+        	   	  	
+        	   	  </div>
+        	   </div>
+
+        	   <div class="row">
+        	   	  <div class="panel panel-default">
+        	   	    
+        	   	     <div class="panel-body" > 
+        	   	         <div class="btn-group-vertical btn-block" >
+						    <button type="button" class="btn btn-info btn-block" style="background-color: #000d34; color: white;" id="btnperfil"><a href="/perfil">Editar Perfil <span class="glyphicon glyphicon-pencil"></span></a></button>
+						    <button type="button" class="btn btn-info btn-block">Mensajes <span class="glyphicon glyphicon-envelope"></span></button>
+						    <button type="button" class="btn btn-info btn-block" id="btngrup"><a href="/grupos">Grupos <span class="glyphicon glyphicon-pencil"></span></a></button>
+						  </div>
+        	   	                	   	     	
+        	   	     </div>
+        	   	  	
+        	   	  </div>
+        	   </div>
+              		     
+		     </div>
+        </div>
+		         	
+    </div>
+	<div class="col-md-6 " >
+		<div class="row">
+        	<div class="col-md-12">
+        	   <div class="row">
+        	   	    <div class="panel panel-default">
+        	   	       <div class="panel-body">
+        	   	     
+        	   	        {{>mainWall}}   	     	
+        	   	        </div>
+        	   	  	</div>
+        	   	  
+        	   </div>
+		     
+		     </div>
+        </div>
+		
+	</div>
+	<div class="col-md-3">
+	    <div class="row">
+        	<div class="col-md-12">
+        	   <div class="row">
+        	   	  <div class="panel panel-default" style="background-color: #C0C0C0; width: 100%; ">
+                       <div class="panel-heading" >
+                             <h3 class="panel-title">Chat <span class="glyphicon glyphicon-group-chat"></span></h3>
+        	   	       </div>
+        	   	       <div class="panel-body" >
+		        	   	     <div class="list-group">
+		        	   	         	        	   	            
+								       {{# each getUser}}
+									        <div>
+									        <a href="#" class="list-group-item active">{{_id}}<span class="badge">{{status.online}}</span></a>   						           
+									           						           
+									        </div>		        
+									        
+									    {{/ each}}		                            
+											
+		        	   	     </div>
+		        	   	     {{> layout}}   	     	
+        	   	       </div>
+        	   	  	
+        	   	  </div>
+        	   </div>
+		     
+		     </div>
+        </div>
+	</div>
+   </div>
+  </div>
+{{else}}
+     {{>forms}}
+{{/if}}
+  
+  
+</template>
+
+

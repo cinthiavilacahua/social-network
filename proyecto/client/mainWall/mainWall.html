@@ -1,0 +1,114 @@
+<template name="mainWall">
+	<ul class="mainWallStyles">
+		<li>
+			{{>mainWallForm}}
+		</li>
+		<li>
+			{{>mainWallLoadMsn}}
+		</li>
+	</ul>
+</template>
+<template name="mainWallForm">
+	<form action="" method="POST" role="form" id="mainForm">
+		<legend>Mural</legend>
+		<div class="form-group" style=" margin-right: 50px; margin-left: 50px; border-style: outset; border-color: #FF8C00; border-width: 2px 4px 4px 4px; "
+>
+			<textarea style="background-color: #FFFACD; opacity:0.8;" name="message" id="input" class="form-control" rows="3" required="required" placeholder="¿Que estas pensando?"></textarea>
+		</div>
+		<li>
+			{{>uploadForm}}
+		</li>
+		<button type="submit" class="btn btn-primary" style="margin-left: 50
+		px; background-color: #CDAD00	">Enviar</button>
+		
+	</form>
+</template>
+<template name="mainWallLoadMsn">
+	{{# if isReady}}
+		<ul>
+		{{#each items}}
+			<li>{{>ArticlesView}}</li>
+		{{/each}}
+		</ul>		
+	{{else}}
+		<b>LOADING...</b>
+	{{/if}}
+</template>
+<template name="ArticlesView">
+	<div class="panel panel-default" style=" margin-right: 50px; margin-left: 20px; border-style: outset; border-color: #FF8C00; border-width: 2px 4px 4px 4px; opacity:0.7;">
+		<div class="panel-body" style="background-color: #FFFACD; opacity:0.9;">
+			{{#if edit}}
+			<form id="editform" action="" method="POST" class="form-inline" role="form">
+			
+				<div class="form-group">
+					<label class="sr-only" for="">label</label>
+					<textarea name="msn" id="inputMsn" class="form-control" rows="3" required="required">
+						{{msn}}
+					</textarea>
+				</div>
+				<button type="submit" class="btn btn-primary">Editar</button>
+			</form>
+			{{else}}
+			<ul>
+				<li>
+					<span class="badge">
+						{{date}}
+					</span>
+					<div class="userNameStyles">
+						{{username}}
+					</div>
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+				</li>
+				<li>
+					{{msn}}		
+				</li>
+				<li>
+					<ul>
+						<li>
+							<a href=""><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Me gusta</a>
+						</li>
+						<li>
+							<a href="/main?id={{_id}}" id="comentBtn"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>Comentar </a>
+						</li>
+						<li>
+							<a href="#" id="editBtn"> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Editar</a>
+						</li>
+						<li>
+							<a href="#modal-id" id="removeBtn"> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>remove</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			{{/if}}
+			{{#if showCommets}}
+			<div class="comments">
+				{{>mainWallCommentForm}}	
+			</div>
+			{{/if}}
+		</div>
+	</div>
+</template>
+<template name="mainWallCommentForm">
+	<form action="" method="POST" role="form" id="mainCommentForm">
+		<legend>Comentar</legend>
+		<div class="form-group">
+			<textarea name="comment" id="input" class="form-control" rows="2" required="required"></textarea>
+		</div>
+	
+		<button type="submit" class="btn btn-primary">Enviar</button>
+	</form>
+	List <br/>
+	{{#if ready}}
+		{{#each listCommnets}}
+			<ul>{{>itemsComments}}</ul>
+		{{/each}}
+	{{else}}
+		<b>Cargando...</b>
+	{{/if}}
+	
+</template>
+<template name="itemsComments">
+	<li>
+		{{msn}}
+	</li>
+</template>

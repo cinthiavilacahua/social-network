@@ -1,0 +1,52 @@
+<template name="layout">
+	<b>
+		Mensajes
+	</b>
+  <div class="row">
+	
+	<div class="col-md-11">
+	   <div class="row">
+	   	  <div class="col-md-12">
+	   	  	 <div class="mainChatStyles">
+
+					<ul class="list-group">
+					{{#if isUserLogin}}
+						{{# if ready}}
+						{{#each msnList}}
+							{{>msnItems}}
+						{{/each}}
+						{{else}}
+							<b>LOAD...</b>
+						{{/if}}	
+					{{else}}
+						<b>El Chat es solo para usuarios registrados</b>
+					{{/if}}
+					
+					
+					</ul>	
+				   </div>		
+				
+				   <form class="chatSendMessages">
+					  <input type="text" value="" name="msn" placeholder="Escriba su Mensaje">
+				   </form>
+	   	     s</div>
+	   </div>
+		
+		   
+	</div>
+  </div>
+</template>
+
+<template name="msnItems"> 
+   
+	<li class="list-group-item">
+		{{username}}
+		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		{{msn}} 
+		<span class="badge">
+			<span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{date}}	
+		</span>
+		
+	</li> 
+     
+</template>

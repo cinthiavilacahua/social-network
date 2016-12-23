@@ -1,0 +1,25 @@
+<template name="uploadForm">
+  {{#with currentUpload}}
+    SUBIENDO ARCHIVOS  <b>{{file.name}}</b>:
+    <span id="progress">{{progress.get}}%</span>
+  {{else}}
+    <input id="fileInput" type="file" />
+  {{/with}}
+  {{#if stado}}
+  	<img src="{{LINKIMG.link}}" width="250px">
+  {{/if}}
+</template>
+<Template name="IMAGELIST">
+	{{# if isReady}}
+	<ul>
+		{{#each IMG}}
+			<li>{{>itemsimages}}</li>
+		{{/each}}
+	</ul>
+	{{else}}
+		Loading...
+	{{/if}}
+</Template>
+<template name="itemsimages">
+	<img src="{{link}}" width="300px">
+</template>

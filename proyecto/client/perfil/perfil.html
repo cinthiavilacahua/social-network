@@ -1,0 +1,92 @@
+<template name="perfil">
+                      
+                    
+ <div class="container-fluid">
+ 
+    <div class="panel-body">
+        <div class="col-md-9 ">
+                    
+            <div class="row">
+                <div class="panel panel-default">
+                     <div class="panel-body" > 
+                           <ul>
+                              <li>
+                                 {{> uploadForm }}
+                                 
+                              </li>
+                              
+                            </ul>               
+                      
+                                                
+                     </div>   
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                  <div class="row">
+                     <div class="col-md-12">
+                         <div class="panel panel-default">
+                            <div class="panel-body" > 
+                             <div class="btn-group-vertical btn-block" >
+                                <button type="button" class="btn btn-info btn-block" style="background-color: #000d34;" id="btnperfil"><a href="/perfil">Editar Perfil <span class="glyphicon glyphicon-pencil"></span></a></button>
+                                <button type="button" class="btn btn-info btn-block">Mensajes <span class="glyphicon glyphicon-envelope"></span></button>
+                                <button type="button" class="btn btn-info btn-block" id="btngrup"><a href="/grupos">Grupos <span class="glyphicon glyphicon-pencil"></span></a></button>
+                              </div>
+                                                    
+                         </div>
+                        </div>
+                     </div>
+                          
+                  </div>
+                    
+             
+                 </div>
+                 <div class="col-md-8">
+                     <div class="row">
+                         <div class="col-md-12 ">
+                             
+                             
+                                <form action="" method="POST" role="form">
+                                <legend>Datos Personales</legend>
+                            
+                                <div class="form-group">
+                                    <form action="" method="POST" role="form" id="perfil">
+                                      Nombre y Apellido:
+                                      <input type="name" class="form-control" id="" placeholder="Paola Iporre" value="{{user}}">
+                                      Ciudad:
+                                      <input name="ciudad"  class="form-control" placeholder="Ciudad" value="{{ciudad}}">
+                                      Estado Civil:
+                                      <input name="estado_civil"  class="form-control" placeholder="Estado Civil" value="{{estado_civil}}">
+                                      Numero de Celular:
+                                      <input name ="celular"  class="form-control" placeholder="Numero de Celular" value="{{celular}}">
+                                      <input type="hidden" value="{{URL2}}" name="images">
+                                    </form>
+                                </div>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary" id="guardar">Guardar cambios</button>
+                                 
+                                </form>
+                            
+                         </div>
+                     </div>
+                                                 
+                 </div>
+            </div>
+        </div>
+                 
+         <div class="col-md-3">
+             <div class="panel panel-default">
+                  {{>layout}}
+             </div>
+         </div> 
+  
+            
+    </div>
+      
+ </div>
+    
+</template>
+
+
+
+

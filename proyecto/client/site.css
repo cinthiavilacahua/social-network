@@ -1,0 +1,114 @@
+body{
+}
+.mainWallStyles{
+	width: 100%;
+	
+}
+.maintemplate{
+	margin: auto;
+	text-align:center;
+}
+.chatSendMessages{
+	margin: auto;
+	padding-left: 10px;
+	width:90%;
+}
+.chatSendMessages input{
+	width: 95%;
+	font-size:20px;
+	padding:20px;
+	border-radius:20px;
+}
+.chatSendMessages input:hover{
+		
+}
+.panel-heading  {
+	text-align:center;
+	border-style: solid;
+    border-width: 5px;
+    font-family: "Lucida Console";
+    font-style: italic;
+
+}	
+
+.panelStyles{
+	margin:auto;
+	align-content:left;
+	width:50%;
+	opacity:0.8;
+	margin-top: 80px;
+
+}
+.background{
+	background:url("/img/background.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;	
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover: 
+}
+.mainChatStyles{
+	margin: auto;
+	width: 90%;
+	max-height:800px;
+	overflow:scroll;
+	align-content:right;
+	
+}
+
+.list-group-item{
+	margin-top:10px;
+	border-radius:15px;
+	opacity:0.9;
+
+
+}
+
+.container-fluid .navbar-header .navbar-brand{
+	color: #e6e6e6;
+	font-size: 50px;
+	font-style: black; 
+	margin: 10px;
+	width: 100%;
+	padding: 10px;
+
+}
+.container-fluid .navbar-collapse {
+	background-color: #000d34;
+    font-size: 140%;
+    font-family: verdana;
+    padding: 10px
+
+}
+.container-fluid .navbar-collapse .navbar-form{
+	margin-left: 500px;
+	width: 100%;
+	margin-top: 0.1px;
+}
+.panel-default{
+	width: 97%;
+	opacity: 0.8;
+}
+.btn-group-vertical .btn-info{
+   background-color: #000d34;
+}
+.list-group-item .list-group{
+   background-color: #000d34;
+   width: 100%;
+}
+.navbar-form .form-control .form-group{
+	width: 100%;
+    margin-left: 20px;
+
+}
+
+.form-inline{
+	width: 100%;
+}
+ 
+.foto img{
+	width: 100px;
+	height: 100px;
+}
+.foto h5{
+	text-align: left;
+}

@@ -1,0 +1,55 @@
+<template name="mainLayout">
+	<header>
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">SpeakMe</a>
+				</div>
+		
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-ex1-collapse">
+					
+					
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="/">Home</a>
+						</li>
+						<li>
+
+						<a href="#">{{>loginButtons align="right"}} <span class="glyphicon glyphicon-user"></span>
+                  	 	</a>
+							
+						</li>
+						<li><a href="/principal"><span class="glyphicons glyphicons-user-vr-add"></span>inicio</a></li>
+						
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div>
+		</nav>
+	</header>
+	<main>
+	<div class="background">
+		{{>Template.dynamic template=main}}
+	</div>
+	</main>
+		<div class="navbar">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#"></a>
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="#">Acerca de.</a>
+					</li>
+					<li>
+						<a href="/">Registro</a>
+					</li>
+				</ul>
+			</div>
+		</div>	
+</template>

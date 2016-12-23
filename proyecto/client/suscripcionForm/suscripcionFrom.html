@@ -1,0 +1,26 @@
+<template name="suscripcionForm">
+<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+	<form action="" method="POST" role="form">
+		<legend>Suscripcion</legend>
+		{{#if checkEmail.value}}
+			<div class="form-group">
+				<label for="">Correo</label>
+				<input type="text" class="form-control" id="" placeholder="Email" value="{{checkEmail.text}}" pattern="email">
+				<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+			</div>
+		{{else}}
+			<div class="form-group">
+				<label for="">Correo</label>
+				<input type="text" class="form-control" id="" placeholder="	Email" pattern="email">
+			</div>  
+		{{/if}}
+		
+		<div class="form-group">
+			<label for="">Nombre</label>
+			<input type="text" class="form-control" id="" placeholder="Nombre">
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>
+	
+</template>

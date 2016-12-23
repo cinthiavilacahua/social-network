@@ -1,0 +1,47 @@
+<template name="forms">
+
+<div class="row">
+	<div class="col-md-6 ">
+		<div class="panelStyles">
+			<div class="panel panel-info" >
+				<div class="panel-heading" style="background-color:#136E93;" >
+					<h1 class="panel-title" style="color: #000000;">REGISTRO</h1>
+				</div>
+				<div class="panel-body">
+					{{#if isUserLogin}}
+						{{>principal}}
+					{{else}}
+					<form action="" method="POST" role="form">
+						<div class="form-group">
+							<label for="">Nombre y Apellido</label> 
+							<input type="name" class="form-control" id="nombreID" placeholder="Paola Iporre">
+							<label for="">Email</label>
+							<input type="email" class="form-control" id="emailID" placeholder="email@email.com">
+							<label for="">Password</label>
+							<input type="password" class="form-control" id="passwordID" placeholder="Password">
+							<label for="">Re. Password</label>
+							<input type="password" class="form-control" id="repassID" placeholder="Re. Password">
+						</div>
+							<button type="submit" class="btn btn-primary" id="btnRegistro">Registrar</button>
+					</form>
+					{{/if}}
+				<!--<main>
+					<div class="background">
+						{{>Template.dynamic
+						template=main}}
+					</div>
+				</main>-->
+				</div>	
+
+			</div>	
+
+		</div>
+	</div>
+		
+	<div class="col-md-6">
+
+			<h1 class="panelStyles" style="color: #000000;font-size: 40px;" aling="right">BIEN VENIDOS A SPEAKME</h1>
+			<h1 class="panelStyles" style="color: #000000;" aling="right">Conéctate con tus amigos y otras personas fascinantes. Obtén actualizaciones instantáneas de las cosas que te interesan.</h1>
+		</div>
+</div>
+</template>
